@@ -57,12 +57,6 @@ variable "bq_table" {
   default     = "question_log"
 }
 
-variable "container_image" {
-  description = "Immagine container servita da Cloud Run. Un placeholder pubblico al primo apply: la pipeline di deploy (.github/workflows/deploy.yml) la aggiorna dopo la prima build."
-  type        = string
-  default     = "us-docker.pkg.dev/cloudrun/container/hello"
-}
-
 variable "allow_unauthenticated" {
   description = "Se true, l'API di Sage è raggiungibile senza autenticazione (comodo per il corso). Metti false per richiedere IAM invoker su Cloud Run."
   type        = bool
