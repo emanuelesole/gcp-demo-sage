@@ -68,6 +68,10 @@ resource "google_cloud_run_v2_service" "sage_backend" {
         name  = "SAGE_RESOURCE_PREFIX"
         value = var.resource_prefix
       }
+      env {
+        name  = "SAGE_INSTRUCTIONS_BUCKET"
+        value = google_storage_bucket.instructions.name
+      }
     }
   }
 
